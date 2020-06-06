@@ -3,18 +3,18 @@ package ru.publisher.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.publisher.model.Message;
-import ru.publisher.service.Publisher;
+import ru.publisher.service.PublisherService;
 
 @RestController
-public class IndexControl {
-    private final Publisher publisher;
+public class PublisherControl {
+    private final PublisherService publisherService;
 
-    public IndexControl(Publisher publisher) {
-        this.publisher = publisher;
+    public PublisherControl(PublisherService publisherService) {
+        this.publisherService = publisherService;
     }
 
     @GetMapping("/")
     public Message index() {
-        return publisher.getRandomMessage();
+        return publisherService.getRandomMessage();
     }
 }

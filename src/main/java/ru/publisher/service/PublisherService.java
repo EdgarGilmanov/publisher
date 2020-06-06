@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.Random;
 
 @Service
-public class Publisher {
+public class PublisherService {
 
     public Message getRandomMessage() {
         int msisdn = new Random().nextInt();
